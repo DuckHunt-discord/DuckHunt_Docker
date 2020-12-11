@@ -1,0 +1,7 @@
+{
+        email caddy@duckhunt.me
+}
+
+localhost {
+        reverse_proxy /api/* duckhunt_bot:8080
+}

@@ -1,0 +1,74 @@
+version: "3.7"
+
+services:
+  duckhunt_bot:
+    build: https://github.com/DuckHunt-discord/DHV4.git
+
+    container_name: duckhunt_bot
+    hostname: duckhunt_bot
+
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      GLOBAL_API_KEY: ${GLOBAL_API_KEY}
+      DB_HOST: "duckhunt_postgres"
+      DB_USER: "duckhunt"
+      DB_PASSWORD: "duckhunt"
+      DB_NAME: "duckhunt"
+
+    networks:
+      - duckhunt
+
+    depends_on:
+      - duckhunt_proxy
+      - duckhunt_postgres
+
+    # restart: unless-stopped
+
+
+  duckhunt_proxy:
+    image: caddy:2
+    container_name: duckhunt_proxy
+    hostname: duckhunt_proxy
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+    networks:
+      - duckhunt
+
+    restart: unless-stopped
+
+  duckhunt_postgres:
+    image: "postgres:12"
+
+    container_name: duckhunt_postgres
+    hostname: duckhunt_postgres
+
+    environment:
+      POSTGRES_USER: "duckhunt"
+      POSTGRES_PASSWORD: "duckhunt"
+      POSTGRES_DB: "duckhunt"
+      POSTGRES_PORT: "5432"
+      PGDATA: "/data/postgres"
+
+    volumes:
+      - postgres:/data/postgres
+
+    networks:
+      - duckhunt
+
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
+  postgres:
+
+networks:
+  duckhunt:
