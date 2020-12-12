@@ -40,6 +40,9 @@ services:
       DB_PASSWORD: "duckhunt"
       DB_NAME: "duckhunt"
 
+    volumes:
+      - web_static:/static:rw
+
     networks:
       - duckhunt
 
@@ -61,6 +64,7 @@ services:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
+      - web_static:/static:ro
 
     networks:
       - duckhunt
@@ -93,6 +97,7 @@ volumes:
   caddy_config:
   postgres:
   duckhunt_cache:
+  web_static:
 
 networks:
   duckhunt:

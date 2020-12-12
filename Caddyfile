@@ -3,6 +3,17 @@
 }
 
 v4.duckhunt.me {
+        encode zstd gzip
         reverse_proxy /api/* duckhunt_bot:8080
-        reverse_proxy duckhunt_website:8080
+
+        @notStatic {
+            not path /static/*
+        }
+
+        reverse_proxy @notStatic duckhunt_website:8080
+        file_server /static/* {
+            root   *
+            index  index.html index.txt index README.md
+        }
+
 }
