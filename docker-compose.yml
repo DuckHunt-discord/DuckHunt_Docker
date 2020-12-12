@@ -27,6 +27,26 @@ services:
 
     restart: unless-stopped
 
+  duckhunt_website:
+    build: https://github.com/DuckHunt-discord/DHV4_Web.git
+
+    container_name: duckhunt_website
+    hostname: duckhunt_website
+
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      DB_HOST: "duckhunt_postgres"
+      DB_USER: "duckhunt"
+      DB_PASSWORD: "duckhunt"
+      DB_NAME: "duckhunt"
+
+    networks:
+      - duckhunt
+
+    depends_on:
+      - duckhunt_postgres
+
+    restart: unless-stopped
 
   duckhunt_proxy:
     image: caddy:2

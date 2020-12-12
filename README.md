@@ -15,6 +15,7 @@ Create a file named .env
 ```dotenv
 BOT_TOKEN="YOUR.BOT.TOKEN.FROM.DISCORD.HERE"
 GLOBAL_API_KEY="AN.UUID4.YOU.GENERATED.SOMEHOW"
+SECRET_KEY="A.DJANGO.SECRET_KEY"
 ```
 
 Edit the Caddyfile to set your domain for the api/webinterface.
