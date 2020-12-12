@@ -2,7 +2,7 @@
         email caddy@duckhunt.me
 }
 
-localhost {
+v4.duckhunt.me {
         reverse_proxy /api/* duckhunt_bot:8080
         reverse_proxy duckhunt_website:8080
 }
