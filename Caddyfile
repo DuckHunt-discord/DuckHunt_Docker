@@ -11,8 +11,8 @@ v4.duckhunt.me {
         }
 
         reverse_proxy @notStatic duckhunt_website:8080
-        file_server /static/* {
-            root   *
+        file_server {
+            root   /
             index  index.html index.txt index README.md
         }
 
