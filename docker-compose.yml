@@ -36,6 +36,7 @@ services:
     environment:
       SECRET_KEY: ${SECRET_KEY}
       DH_API_KEY: ${GLOBAL_API_KEY}
+      DH_API_URL: "http://duckhunt_bot:8080/api"
       DB_HOST: "duckhunt_postgres"
       DB_USER: "duckhunt"
       DB_PASSWORD: "duckhunt"
