@@ -105,7 +105,7 @@ services:
       - postgres:/data/postgres
 
     ports:
-      - "5432:5432"
+      - "54320:5432"
 
     networks:
       - duckhunt
