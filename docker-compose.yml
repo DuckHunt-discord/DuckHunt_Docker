@@ -104,6 +104,9 @@ services:
     volumes:
       - postgres:/data/postgres
 
+    ports:
+      - "5432:5432"
+
     networks:
       - duckhunt
 
