@@ -8,7 +8,7 @@ v4.duckhunt.me {
 
         log {
             output stderr
-            format console
+            format single_field common_log
             level DEBUG
         }
 
