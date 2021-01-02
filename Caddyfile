@@ -1,15 +1,16 @@
 {
         email caddy@duckhunt.me
-        log {
-            output stdout
-            format console
-            level DEBUG
-        }
 }
 
 v4.duckhunt.me {
         encode zstd gzip
         reverse_proxy /api/* duckhunt_bot:8080
+
+        log {
+            output stdout
+            format console
+            level DEBUG
+        }
 
         @notStatic {
             not path /static/*
