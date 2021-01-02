@@ -7,7 +7,7 @@ v4.duckhunt.me {
         reverse_proxy /api/* duckhunt_bot:8080
 
         log {
-            output stdout
+            output stderr
             format console
             level DEBUG
         }
