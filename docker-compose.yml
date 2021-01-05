@@ -22,7 +22,6 @@ services:
       - duckhunt
 
     depends_on:
-      - duckhunt_proxy
       - duckhunt_postgres
 
     restart: unless-stopped
@@ -46,6 +45,7 @@ services:
       DB_USER: "duckhunt"
       DB_PASSWORD: "duckhunt"
       DB_NAME: "duckhunt"
+      MEMCACHED_LOC: "duckhunt_memcached:11211"
 
     volumes:
       - web_static:/static:rw
@@ -55,6 +55,7 @@ services:
 
     depends_on:
       - duckhunt_postgres
+      - duckhunt_cache
 
     restart: unless-stopped
 
@@ -116,6 +117,25 @@ services:
       options:
         max-size: "1m"
         max-file: "3"
+
+  duckhunt_cache:
+    image: "memcached"
+
+    container_name: duckhunt_cache
+    hostname: duckhunt_cache
+
+    ports:
+      - "11211:11211"
+
+    entrypoint:
+      - memcached
+      - -m 64
+
+    networks:
+      - duckhunt
+
+    restart: unless-stopped
+
 
 volumes:
   caddy_data:
