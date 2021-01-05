@@ -129,7 +129,7 @@ services:
 
     entrypoint:
       - memcached
-      - -m 64
+      - -m 128
 
     networks:
       - duckhunt
