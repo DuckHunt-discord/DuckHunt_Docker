@@ -45,7 +45,7 @@ services:
       DB_USER: "duckhunt"
       DB_PASSWORD: "duckhunt"
       DB_NAME: "duckhunt"
-      MEMCACHED_LOC: "duckhunt_memcached:11211"
+      MEMCACHED_LOC: "duckhunt_cache:11211"
 
     volumes:
       - web_static:/static:rw
