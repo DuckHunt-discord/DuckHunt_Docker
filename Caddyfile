@@ -12,6 +12,10 @@ v4.duckhunt.me {
             level DEBUG
         }
 
+        route {
+	        header /static/* Cache-Control max-age=86400
+        }
+
         @notStatic {
             not path /static/*
         }
@@ -21,5 +25,4 @@ v4.duckhunt.me {
             root   /
             index  index.html index.txt index README.md
         }
-
 }
