@@ -15,9 +15,9 @@ v4.duckhunt.me {
         log {
             output file /logs/access.log.jsons {
                 roll_disabled
-                roll_size     <size>
-                roll_keep     <num>
-                roll_keep_for <days>
+                roll_size     3
+                roll_keep     1
+                roll_keep_for 30
             }
 
             format json
