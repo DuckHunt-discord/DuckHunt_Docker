@@ -78,7 +78,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
       - $PWD/logs:/logs
-      - $PWD/local:/local:ro
+      - caddy_local:/local:ro
       - web_static:/static:ro
 
     networks:
@@ -138,10 +138,22 @@ services:
 
     restart: unless-stopped
 
+  caddy_logparser:
+    build: https://github.com/paris-ci/caddy-logparser
+
+    container_name: caddy_logparser
+    hostname: caddy_logparser
+
+    volumes:
+      - $PWD/logs:/logs
+      - caddy_local:/local:rw
+
+    restart: unless-stopped
 
 volumes:
   caddy_data:
   caddy_config:
+  caddy_local:
   postgres:
   duckhunt_cache:
   web_static:
