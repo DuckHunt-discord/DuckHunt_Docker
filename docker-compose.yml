@@ -139,7 +139,7 @@ services:
     restart: unless-stopped
 
   caddy_logparser:
-    build: https://github.com/paris-ci/caddy-logparser
+    build: https://github.com/paris-ci/caddy-logparser.git
 
     container_name: caddy_logparser
     hostname: caddy_logparser
