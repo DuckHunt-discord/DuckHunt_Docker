@@ -10,7 +10,8 @@ services:
     environment:
       BOT_TOKEN: ${BOT_TOKEN}
       GLOBAL_API_KEY: ${GLOBAL_API_KEY}
-      DBL_SHARED_SECRET: ${DBL_SHARED_SECRET}
+      TOPGG_SHARED_SECRET: ${TOPGG_SHARED_SECRET}
+      FATESLIST_API_TOKEN: ${FATESLIST_API_TOKEN}
       DB_HOST: "duckhunt_postgres"
       DB_USER: "duckhunt"
       DB_PASSWORD: "duckhunt"
