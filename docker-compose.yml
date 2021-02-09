@@ -12,6 +12,7 @@ services:
       GLOBAL_API_KEY: ${GLOBAL_API_KEY}
       TOPGG_SHARED_SECRET: ${TOPGG_SHARED_SECRET}
       FATESLIST_API_TOKEN: ${FATESLIST_API_TOKEN}
+      DISCORDBOTLIST_TOKEN: ${DISCORDBOTLIST_TOKEN}
       DB_HOST: "duckhunt_postgres"
       DB_USER: "duckhunt"
       DB_PASSWORD: "duckhunt"
