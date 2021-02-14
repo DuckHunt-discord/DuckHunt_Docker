@@ -21,6 +21,7 @@ services:
       VOIDBOTS_TOKEN: ${VOIDBOTS_TOKEN}
       INFINITYBOTLIST_TOKEN: ${INFINITYBOTLIST_TOKEN}
       BLIST_TOKEN: ${BLIST_TOKEN}
+      DISCORDAPPS_TOKEN: ${DISCORDAPPS_TOKEN}
       DB_HOST: "duckhunt_postgres"
       DB_USER: "duckhunt"
       DB_PASSWORD: "duckhunt"
