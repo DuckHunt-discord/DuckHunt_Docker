@@ -10,6 +10,7 @@ services:
     environment:
       BOT_TOKEN: ${BOT_TOKEN}
       GLOBAL_API_KEY: ${GLOBAL_API_KEY}
+      STATCORD_TOKEN: ${STATCORD_TOKEN}
       DB_HOST: "duckhunt_postgres"
       DB_USER: "duckhunt"
       DB_PASSWORD: "duckhunt"
