@@ -28,7 +28,7 @@ v4.duckhunt.me {
         }
 
         @notStatic {
-            not path /static/* /local/*
+            not path /static/* /local/* /media/*
         }
 
         reverse_proxy @notStatic duckhunt_website:8080
