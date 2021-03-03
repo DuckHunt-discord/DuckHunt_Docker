@@ -28,11 +28,11 @@ v4.duckhunt.me {
         }
 
         route {
-	        header /media/* Cache-Control max-age=172400
+	        header /images/* Cache-Control max-age=172400
         }
 
         @notStatic {
-            not path /static/* /local/* /media/*
+            not path /static/* /local/* /images/*
         }
 
         reverse_proxy @notStatic duckhunt_website:8080

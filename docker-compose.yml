@@ -50,7 +50,7 @@ services:
 
     volumes:
       - web_static:/static:rw
-      - web_media:/media:rw
+      - web_media:/images:rw
 
     networks:
       - duckhunt
@@ -82,7 +82,7 @@ services:
       - $PWD/logs:/logs
       - caddy_local:/local:ro
       - web_static:/static:ro
-      - web_media:/media:ro
+      - web_media:/images:ro
 
     networks:
       - duckhunt
