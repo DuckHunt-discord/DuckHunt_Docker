@@ -27,6 +27,10 @@ v4.duckhunt.me {
 	        header /static/* Cache-Control max-age=86400
         }
 
+        route {
+	        header /media/* Cache-Control max-age=172400
+        }
+
         @notStatic {
             not path /static/* /local/* /media/*
         }
