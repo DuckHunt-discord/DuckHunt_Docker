@@ -17,7 +17,7 @@ services:
       DB_NAME: "duckhunt"
 
     volumes:
-      - duckhunt_cache:/bot/cache
+      - duckhunt_cache:/duckhunt/src/cache
 
     networks:
       - duckhunt
