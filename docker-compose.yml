@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   duckhunt_bot:
-    build: https://github.com/DuckHunt-discord/DHV4.git
+    build: "https://github.com/DuckHunt-discord/DHV4.git#master"
 
     container_name: duckhunt_bot
     hostname: duckhunt_bot
@@ -33,7 +33,7 @@ services:
         max-file: "3"
 
   duckhunt_website:
-    build: https://github.com/DuckHunt-discord/DHV4_Web.git
+    build: "https://github.com/DuckHunt-discord/DHV4_Web.git#master"
 
     container_name: duckhunt_website
     hostname: duckhunt_website
@@ -142,7 +142,7 @@ services:
     restart: unless-stopped
 
   caddy_logparser:
-    build: https://github.com/paris-ci/caddy-logparser.git
+    build: "https://github.com/paris-ci/caddy-logparser.git#master"
 
     container_name: caddy_logparser
     hostname: caddy_logparser
