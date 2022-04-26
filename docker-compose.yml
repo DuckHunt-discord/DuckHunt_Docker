@@ -67,7 +67,7 @@ services:
         max-file: "3"
 
   duckhunt_proxy:
-    image: caddy:2
+    image: caddy:2.4
     container_name: duckhunt_proxy
     hostname: duckhunt_proxy
 
