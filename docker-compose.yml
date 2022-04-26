@@ -67,7 +67,7 @@ services:
         max-file: "3"
 
   duckhunt_proxy:
-    build: ./Caddy_Dockerfile
+    build: caddy_ct
     container_name: duckhunt_proxy
     hostname: duckhunt_proxy
 
