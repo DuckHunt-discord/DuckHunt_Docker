@@ -3,6 +3,7 @@ version: "3.7"
 services:
   duckhunt_bot:
     build: "https://github.com/DuckHunt-discord/DHV4.git#master"
+    init: true
 
     container_name: duckhunt_bot
     hostname: duckhunt_bot
@@ -34,7 +35,7 @@ services:
 
   duckhunt_website:
     build: "https://github.com/DuckHunt-discord/DHV4_Web.git#master"
-
+    init: true
     container_name: duckhunt_website
     hostname: duckhunt_website
 
@@ -70,6 +71,7 @@ services:
     build: caddy_ct
     container_name: duckhunt_proxy
     hostname: duckhunt_proxy
+    init: true
 
     ports:
       - "80:80"
@@ -96,6 +98,7 @@ services:
 
   duckhunt_postgres:
     image: "postgres:12"
+    init: true
 
     container_name: duckhunt_postgres
     hostname: duckhunt_postgres
@@ -125,6 +128,7 @@ services:
 
   duckhunt_cache:
     image: "memcached"
+    init: true
 
     container_name: duckhunt_cache
     hostname: duckhunt_cache
@@ -142,6 +146,7 @@ services:
     restart: unless-stopped
 
   caddy_logparser:
+    init: true
     build: "https://github.com/paris-ci/caddy-logparser.git#master"
 
     container_name: caddy_logparser
