@@ -97,7 +97,7 @@ services:
         max-file: "3"
 
   duckhunt_postgres:
-    image: "postgres:12"
+    image: "postgres:15"
     init: true
 
     container_name: duckhunt_postgres
