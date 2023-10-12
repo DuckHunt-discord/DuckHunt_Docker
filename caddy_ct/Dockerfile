@@ -1,4 +1,4 @@
-FROM caddy:2.7.4-builder AS builder
+FROM caddy:2.7.5-builder AS builder
 
 RUN xcaddy build \
     --with github.com/caddyserver/transform-encoder
