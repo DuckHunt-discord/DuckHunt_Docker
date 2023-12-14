@@ -1,6 +1,8 @@
 {
         email caddy@duckhunt.me
-        trusted_proxies static private_ranges
+        servers {
+            trusted_proxies static private_ranges
+        }
 }
 
 v4.duckhunt.me {
