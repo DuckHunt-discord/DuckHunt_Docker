@@ -21,7 +21,7 @@ services:
       DB_NAME: "duckhunt"
 
     volumes:
-      - duckhunt_cache:/duckhunt/src/cache
+      - ./opt/duckhunt_cache:/duckhunt/src/cache
 
     networks:
       - duckhunt
@@ -53,8 +53,8 @@ services:
       MEMCACHED_LOC: "duckhunt_cache:11211"
 
     volumes:
-      - web_static:/static:rw
-      - web_media:/images:rw
+      - ./opt/web_static:/static:rw
+      - ./opt/web_media:/images:rw
 
     networks:
       - duckhunt
@@ -82,12 +82,12 @@ services:
 
     volumes:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
+      - ./opt/caddy_data:/data
+      - ./opt/caddy_config:/config
       - $PWD/logs:/logs
-      - caddy_local:/local:ro
-      - web_static:/static:ro
-      - web_media:/images:ro
+      - ./opt/caddy_local:/local:ro
+      - ./opt/web_static:/static:ro
+      - ./opt/web_media:/images:ro
 
     networks:
       - duckhunt
@@ -114,7 +114,7 @@ services:
       PGDATA: "/data/postgres"
 
     volumes:
-      - postgres:/data/postgres
+      - ./opt/postgres:/data/postgres
 
     ports:
       - "54320:5432"
@@ -157,18 +157,9 @@ services:
 
     volumes:
       - $PWD/logs:/logs
-      - caddy_local:/local:rw
+      - ./opt/caddy_local:/local:rw
 
     restart: unless-stopped
-
-volumes:
-  caddy_data:
-  caddy_config:
-  caddy_local:
-  postgres:
-  duckhunt_cache:
-  web_static:
-  web_media:
 
 networks:
   duckhunt:
