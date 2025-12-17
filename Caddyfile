@@ -1,7 +1,7 @@
 {
         email caddy@duckhunt.me
         servers {
-            trusted_proxies static private_ranges
+            trusted_proxies static private_ranges 100.0.0.0/8
         }
 }
 
