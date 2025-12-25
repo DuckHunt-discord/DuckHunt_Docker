@@ -100,7 +100,7 @@ services:
         max-file: "3"
 
   duckhunt_postgres:
-    image: "postgres:15"
+    image: "pgautoupgrade/pgautoupgrade:18-trixie"
     init: true
 
     container_name: duckhunt_postgres
@@ -111,10 +111,9 @@ services:
       POSTGRES_PASSWORD: "duckhunt"
       POSTGRES_DB: "duckhunt"
       POSTGRES_PORT: "5432"
-      PGDATA: "/data/postgres"
 
     volumes:
-      - ./opt/postgres:/data/postgres
+      - ./opt/postgres:/var/lib/postgresql
 
     ports:
       - "54320:5432"
