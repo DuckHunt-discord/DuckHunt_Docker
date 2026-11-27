@@ -100,7 +100,7 @@ services:
         max-file: "3"
 
   duckhunt_postgres:
-    image: "pgautoupgrade/pgautoupgrade:18-trixie"
+    image: "pgautoupgrade/pgautoupgrade:19-trixie"
     init: true
 
     container_name: duckhunt_postgres
